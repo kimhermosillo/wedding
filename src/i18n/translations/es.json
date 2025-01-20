@@ -1,12 +1,12 @@
 {
-  "appName": "App-Name",
+  "appName": "Kim & Sals Wedding!",
   "pageNames": {
-    "about": "Über",
+    "about": "Conocenos",
     "fetch": "Abrufen",
     "home": "Homepage",
-    "pageNotFound": "Seite nicht gefunden"
+    "pageNotFound": "No existe la página"
   },
-  "aboutText": "Seite über",
+  "aboutText": "Sobre nosotros...",
   "fetchText": "Seite abrufen",
   "homeText": "Homepage",
   "homeButtonText": "Klick mich",

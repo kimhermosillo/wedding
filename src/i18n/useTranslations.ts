@@ -12,7 +12,7 @@ interface IUseTranslationMethods {
   tt: (key: keyof TTranslations) => string
 }
 
-interface IUseTranslation extends i18nState, IUseTranslationMethods {}
+interface IUseTranslation extends i18nState, IUseTranslationMethods { }
 
 export default function useTranslations(): IUseTranslation {
   const dispatch = useAppDispatch()

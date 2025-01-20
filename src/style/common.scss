@@ -12,7 +12,7 @@ body,
   font-family: variables.$primary-font;
   color: var(--secondary-color);
 
-  > %headings {
+  >%headings {
     font-family: variables.$secondary-font;
     color: var(--primary-color);
   }
@@ -29,7 +29,7 @@ body,
   background-position: center;
   background-size: cover;
 
-  > * {
+  >* {
     transition: all 0.3s ease-out;
   }
 }
@@ -51,8 +51,8 @@ a:hover {
 }
 
 .main {
-  min-width: 280px;
-  min-height: 200px;
+  min-width: 85vw;
+  min-height: 65vh;
   padding: 30px;
 
   background: var(--main-bg-color);

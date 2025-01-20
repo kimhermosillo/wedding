@@ -29,7 +29,7 @@ const App: FC = (): ReactElement => {
     if (
       window.__PRELOADED_STATE__?.theme?.theme == null &&
       JSON.parse(localStorage.getItem(localStorageAppKey) as string)?.theme ==
-        null &&
+      null &&
       window.matchMedia('(prefers-color-scheme: dark)').matches
     ) {
       dispatch(switchToDark())

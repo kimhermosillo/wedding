@@ -1,14 +1,14 @@
 {
-  "appName": "App Name",
+  "appName": "Kim & Sal's Wedding",
   "pageNames": {
-    "about": "About",
+    "about": "About Kim and Sal",
     "fetch": "Fetch",
     "home": "Home",
     "pageNotFound": "Page Not Found"
   },
-  "aboutText": "About page",
+  "aboutText": "Kim and Sal...",
   "fetchText": "Fetch page",
-  "homeText": "Home page",
+  "homeText": "We are getting married!",
   "homeButtonText": "Click Me",
   "loadableText": "This is a loadable component",
   "notFoundText": "Wrong page, sorry...",

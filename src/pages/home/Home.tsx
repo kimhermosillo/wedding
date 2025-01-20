@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from 'store/store'
 import { Button, Counter, Menu, PageMeta } from 'components'
 
 import styles from './home.module.scss'
+import Countdown from 'components/Countdown'
 
 const Home: FC = (): ReactElement => {
   const globalCount = useAppSelector((state) => state.counter.value)
@@ -27,21 +28,10 @@ const Home: FC = (): ReactElement => {
       <h1>{t.homeText}</h1>
       <Menu />
       <div className={styles.counters}>
-        <Counter value={localCount} description={t.counterDescription.local} />
-        <Counter
-          value={globalCount}
-          description={t.counterDescription.global}
-        />
+        <Countdown targetDate={new Date('2026-10-01').getTime()} />
       </div>
-      <Button
-        className="center"
-        onClick={() => {
-          setCount((prevState) => prevState + 1)
-          dispatch(increment())
-        }}
-      >
-        {t.homeButtonText}
-      </Button>
+      September or October 2026....
+
     </div>
   )
 }
