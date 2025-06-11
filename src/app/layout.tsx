@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Homemade_Apple } from "next/font/google";
+import { Beth_Ellen, Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 
 import "./globals.css";
@@ -14,10 +14,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const homemadeApple = Homemade_Apple({
-  variable: "--font-homemade-apple",
+
+const bethEllen = Beth_Ellen({
+  variable: "--font-beth-ellen",
   subsets: ["latin"],
   weight: "400"
+})
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant-garamond",
+  subsets: ["latin"],
+  weight: "500"
 })
 
 export const metadata: Metadata = {
@@ -33,16 +40,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${homemadeApple.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${cormorant.variable} ${bethEllen.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
           <div className="flex justify-around p-8  min-w-full">
-            <Link href="/" >Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/schedule">Schedule</Link>
-            <Link href="/rsvp">RSVP</Link>
+            <Link className=" transition-transform duration-300 ease-in-out hover:scale-110 transition-colors duration-300 ease-in-out  hover:text-lime-700" href="/" >Home</Link>
+            <Link className=" transition-transform duration-300 ease-in-out hover:scale-110 transition-colors duration-300 ease-in-out hover:text-lime-700" href="/about">About</Link>
+            <Link className=" transition-transform duration-300 ease-in-out hover:scale-110 transition-colors duration-300 ease-in-out hover:text-lime-700" href="/schedule">Schedule</Link>
+            <Link className="transition-transform duration-300 ease-in-out hover:scale-110 transition-colors duration-300 ease-in-out  hover:text-lime-700" href="/rsvp">RSVP</Link>
+            <p className="transition-colors duration-300 ease-in-out text-gray-500 hover:text-lime-700 animate-pulse text-7xl font-[family-name:var(--font-beth-ellen)]">Kim & Sal</p>
+
           </div>
-          <main className="flex flex-col gap-[32px]  items-center sm:items-start">
+          <main className="flex flex-col gap-[32px]  items-center sm:items-start font-[family-name:var(--font-cormorant-garamond)] text-xl">
             {children}
           </main>
         </div>

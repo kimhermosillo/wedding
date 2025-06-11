@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <p className="text-7xl font-[family-name:var(--font-homemade-apple)]">Kim & Sal</p>
       <Image
         src="/patagonia.jpeg"
         alt="Torres Del Paine"
@@ -12,7 +11,7 @@ export default function Home() {
         height={38}
         priority
       />
-      <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+      <ol className="list-inside list-decimal  text-center">
         We are getting married!
 
       </ol>
