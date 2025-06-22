@@ -1,30 +1,13 @@
-const http = require('http')
-const express = require('express')
 
 
-const server = http.createServer(async (req, res) => {
-    if (req.url === "/" && req.method === "GET") {
-        res.writeHead(200, { "Content-Type": "application/json" });
-        res.write(JSON.stringify({ message: "hello" }));
+import { addRSVP } from './handlers/guestRsvp.ts';
+import app from './server';
+import * as dotenv from 'dotenv'
 
-        res.end();
-        return;
-    }
+dotenv.config()
 
-    res.writeHead(404, { "Content-Type": "application/json" });
-    res.end(JSON.stringify({ message: "nope" }));
-});
+app.post('/addRsvp', addRSVP)
 
-const PORT = process.env.PORT;
-
-server.listen(PORT, () => {
-    console.log(`server on ${PORT}`);
-});
-
-const app = express()
-
-
-app.get('/', (req, res) => {
-    res.status(200)
-
+app.listen(3000, () => {
+    console.log('hello on http://localhost:3000')
 })
