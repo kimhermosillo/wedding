@@ -51,7 +51,7 @@ export default function RootLayout({
             <p className="transition-colors duration-300 ease-in-out text-gray-500 hover:text-lime-700 animate-pulse text-7xl font-[family-name:var(--font-beth-ellen)]">Kim & Sal</p>
 
           </div>
-          <main className="flex flex-col gap-[32px]  items-center sm:items-start font-[family-name:var(--font-cormorant-garamond)] text-xl">
+          <main className="flex flex-col gap-[32px]  items-center sm:items-start font-[family-name:var(--font-cormorant-garamond)] text-xl mb-12">
             {children}
           </main>
         </div>

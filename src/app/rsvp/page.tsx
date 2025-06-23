@@ -11,6 +11,7 @@ export default function RSVPInput() {
     });
 
     const [status, setStatus] = useState<string | null>(null);
+    const [successful, setSuccessful] = useState<boolean>(null);
     const [dietaryRestrictions, setDietaryRestrictions] = useState<boolean>(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -34,6 +35,7 @@ export default function RSVPInput() {
 
             if (res.ok) {
                 setStatus('RSVP successful!');
+                setSuccessful(true);
             } else {
                 setStatus('RSVP failed.');
             }
@@ -46,64 +48,57 @@ export default function RSVPInput() {
     return (
         <>
             <p>We would love for you to be able to join us! Please RSVP to let us know if you're able to attend.</p>
+            <>
 
-            <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                value={formData.name}
-                onChange={handleChange}
-                className="border px-2 py-1 mb-2 block w-full"
-            />
-
-            <input
-                type="email"
-                name="email"
-                placeholder="Email (optional)"
-                value={formData.email}
-                onChange={handleChange}
-                className="border px-2 py-1 mb-2 block w-full"
-            />
-
-            <label className="inline-flex items-center mb-2">
-                <input
-                    type="checkbox"
-                    name="rsvp"
-                    checked={formData.rsvp}
+                <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="John" type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
                     onChange={handleChange}
-                    className="mr-2"
+                    required
                 />
-                Attending
-            </label>
-            <button
-                onClick={() => setDietaryRestrictions(!dietaryRestrictions)}
-                className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 mb-2">
-                Dietary restrictions?
-            </button>
-            {dietaryRestrictions && (<input
-                type="text"
-                name="dietaryRestrictions"
-                placeholder="Dietary Restrictions (optional)"
-                value={formData.dietaryRestrictions}
-                onChange={handleChange}
-                className="border px-2 py-1 mb-2 block w-full"
-            />)}
 
-            <textarea
-                name="message"
-                placeholder="Message (optional)"
-                value={formData.message}
-                onChange={handleChange}
-                className="border px-2 py-1 mb-2 block w-full"
-            />
-
-            <button
-                onClick={handleRSVP}
-                className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-300"
-            >
-                RSVP Now
-            </button>
-
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email (optional)"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                <label className="inline-flex items-center mb-2">
+                    <input
+                        type="checkbox"
+                        name="rsvp"
+                        checked={formData.rsvp}
+                        onChange={handleChange}
+                        className="mr-2"
+                    />
+                    Attending
+                </label>
+                <button
+                    onClick={() => setDietaryRestrictions(!dietaryRestrictions)}
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    Dietary restrictions?
+                </button>
+                {dietaryRestrictions && (<input
+                    type="text"
+                    name="dietaryRestrictions"
+                    placeholder="Dietary Restrictions (optional)"
+                    value={formData.dietaryRestrictions}
+                    onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />)}
+                <textarea
+                    name="message"
+                    placeholder="Message (optional)"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                <button
+                    onClick={handleRSVP}
+                    className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+                    RSVP Now
+                </button>
+            </>
             {status && <p className="mt-4">{status}</p>}
         </>
     );
