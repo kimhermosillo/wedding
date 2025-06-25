@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Metadata } from "next";
 import { Beth_Ellen, Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
@@ -40,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cormorant.variable} ${bethEllen.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${bethEllen.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="items-center justify-items-center min-h-screen font-[family-name:var(--font-geist-sans)]">
           <div className="flex justify-around p-8  min-w-full">

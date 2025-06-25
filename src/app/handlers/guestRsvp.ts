@@ -1,7 +1,6 @@
 import prisma from '../../lib/prisma';
 
 export const addRSVP = async (req: any, res: any) => {
-    console.log(req, res)
     const { name, email, phone, rsvp, dietaryRestrictions, message } = req.body;
 
     if (!name || rsvp === undefined) {
