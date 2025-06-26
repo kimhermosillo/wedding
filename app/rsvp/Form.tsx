@@ -14,7 +14,7 @@ export default function Form({status, setStatus}: FormProps): ReactElement{
     });
     const [dietaryRestrictions, setDietaryRestrictions] = useState<boolean>(false);
 
-    const [successful, setSuccessful] = useState<boolean>(null);
+    const [successful, setSuccessful] = useState<boolean>();
 
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

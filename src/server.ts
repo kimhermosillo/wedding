@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors';
 
-import { addRSVP } from './app/handlers/guestRsvp'
+import { addRSVP } from '../app/handlers/guestRsvp'
 
 const app = express()
 
